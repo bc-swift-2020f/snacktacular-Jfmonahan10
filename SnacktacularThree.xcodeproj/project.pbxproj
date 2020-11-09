@@ -23,6 +23,7 @@
 		8F4896272550900B00573C4E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F4896252550900B00573C4E /* LaunchScreen.storyboard */; };
 		8F4896322550900B00573C4E /* SnacktacularThreeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F4896312550900B00573C4E /* SnacktacularThreeTests.swift */; };
 		8F48963D2550900B00573C4E /* SnacktacularThreeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F48963C2550900B00573C4E /* SnacktacularThreeUITests.swift */; };
+		8FA48EEA2559E4DD00C9DCDE /* ReviewTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FA48EE92559E4DD00C9DCDE /* ReviewTableViewController.swift */; };
 		E80275138A990761BFB40530 /* Pods_SnacktacularThree.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C7F741DAA35EB8CE3E74037 /* Pods_SnacktacularThree.framework */; };
 /* End PBXBuildFile section */
 
@@ -68,6 +69,7 @@
 		8F4896382550900B00573C4E /* SnacktacularThreeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SnacktacularThreeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F48963C2550900B00573C4E /* SnacktacularThreeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnacktacularThreeUITests.swift; sourceTree = "<group>"; };
 		8F48963E2550900B00573C4E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8FA48EE92559E4DD00C9DCDE /* ReviewTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewTableViewController.swift; sourceTree = "<group>"; };
 		9F1119A1A4706C1EA40FC29B /* Pods-SnacktacularThree.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SnacktacularThree.release.xcconfig"; path = "Target Support Files/Pods-SnacktacularThree/Pods-SnacktacularThree.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -129,6 +131,7 @@
 				8F335E502550A05B00F3E14A /* Spots.swift */,
 				8F335E4025509D2F00F3E14A /* SpotListViewController.swift */,
 				8F335E3625509D1100F3E14A /* SpotDetailViewController.swift */,
+				8FA48EE92559E4DD00C9DCDE /* ReviewTableViewController.swift */,
 				8F335E3B25509D2000F3E14A /* SpotTableViewCell.swift */,
 				8F335E3125509CFE00F3E14A /* UIViewController+alert.swift */,
 				8F335E9A2550A90900F3E14A /* APIKeys.swift */,
@@ -373,6 +376,7 @@
 				8F335E3725509D1100F3E14A /* SpotDetailViewController.swift in Sources */,
 				8F48961F2550900900573C4E /* LoginViewController.swift in Sources */,
 				8F335E4625509D3E00F3E14A /* Spot.swift in Sources */,
+				8FA48EEA2559E4DD00C9DCDE /* ReviewTableViewController.swift in Sources */,
 				8F335E512550A05B00F3E14A /* Spots.swift in Sources */,
 				8F48961B2550900900573C4E /* AppDelegate.swift in Sources */,
 				8F335E9B2550A90900F3E14A /* APIKeys.swift in Sources */,
