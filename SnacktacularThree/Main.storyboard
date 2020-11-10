@@ -287,7 +287,7 @@
                                     </constraints>
                                 </view>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ReviewCell" id="T3m-s8-nbS">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ReviewCell" id="T3m-s8-nbS" customClass="SpotReviewTableViewCell" customModule="SnacktacularThree" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="408" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="T3m-s8-nbS" id="VAw-g7-cCJ">
@@ -297,7 +297,7 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="OfE-JN-Jc6">
                                                     <rect key="frame" x="8" y="6" width="79" height="15"/>
                                                     <subviews>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="1" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="18L-k6-peq">
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="18L-k6-peq">
                                                             <rect key="frame" x="0.0" y="-0.5" width="15" height="15"/>
                                                             <color key="tintColor" systemColor="labelColor"/>
                                                             <constraints>
@@ -305,7 +305,7 @@
                                                                 <constraint firstAttribute="height" constant="15" id="yL8-kW-03f"/>
                                                             </constraints>
                                                         </imageView>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="2" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="EDK-0l-OKF">
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="1" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="EDK-0l-OKF">
                                                             <rect key="frame" x="16" y="-0.5" width="15" height="15"/>
                                                             <color key="tintColor" systemColor="labelColor"/>
                                                             <constraints>
@@ -313,7 +313,7 @@
                                                                 <constraint firstAttribute="height" constant="15" id="QCO-3T-Uov"/>
                                                             </constraints>
                                                         </imageView>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="3" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="OHX-KD-SWd">
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="2" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="OHX-KD-SWd">
                                                             <rect key="frame" x="32" y="-0.5" width="15" height="15"/>
                                                             <color key="tintColor" systemColor="labelColor"/>
                                                             <constraints>
@@ -321,7 +321,7 @@
                                                                 <constraint firstAttribute="height" constant="15" id="ymi-rt-JGP"/>
                                                             </constraints>
                                                         </imageView>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="4" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="56k-pO-q0U">
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="3" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="56k-pO-q0U">
                                                             <rect key="frame" x="48" y="-0.5" width="15" height="15"/>
                                                             <color key="tintColor" systemColor="labelColor"/>
                                                             <constraints>
@@ -329,7 +329,7 @@
                                                                 <constraint firstAttribute="height" constant="15" id="qq3-yv-qCK"/>
                                                             </constraints>
                                                         </imageView>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="5" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Ph6-MT-eDu">
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="4" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Ph6-MT-eDu">
                                                             <rect key="frame" x="64" y="-0.5" width="15" height="15"/>
                                                             <color key="tintColor" systemColor="labelColor"/>
                                                             <constraints>
@@ -374,6 +374,13 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="reviewTextLabel" destination="JPe-cy-24I" id="2IH-qO-WQA"/>
+                                            <outlet property="reviewTitleLabel" destination="7Zh-7E-WNf" id="47k-Gr-MOq"/>
+                                            <outletCollection property="starImageCollection" destination="18L-k6-peq" collectionClass="NSMutableArray" id="Cmc-Kr-eAP"/>
+                                            <outletCollection property="starImageCollection" destination="EDK-0l-OKF" collectionClass="NSMutableArray" id="aOh-5L-mhy"/>
+                                            <outletCollection property="starImageCollection" destination="OHX-KD-SWd" collectionClass="NSMutableArray" id="v0l-ue-EFb"/>
+                                            <outletCollection property="starImageCollection" destination="56k-pO-q0U" collectionClass="NSMutableArray" id="h8z-jO-hmw"/>
+                                            <outletCollection property="starImageCollection" destination="Ph6-MT-eDu" collectionClass="NSMutableArray" id="KoK-7z-KyH"/>
                                             <segue destination="Jyr-OJ-m7G" kind="show" identifier="ShowReview" id="NeI-Yi-gwh"/>
                                         </connections>
                                     </tableViewCell>
@@ -506,6 +513,9 @@
                                                             <state key="normal" title="Button" image="star" catalog="system">
                                                                 <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="32"/>
                                                             </state>
+                                                            <connections>
+                                                                <action selector="starButtonPressed:" destination="Jyr-OJ-m7G" eventType="touchUpInside" id="yhi-CQ-ENe"/>
+                                                            </connections>
                                                         </button>
                                                         <button opaque="NO" tag="2" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JT3-ZA-k6e">
                                                             <rect key="frame" x="42" y="0.0" width="40" height="40"/>
@@ -518,6 +528,9 @@
                                                             <state key="normal" title="Button" image="star" catalog="system">
                                                                 <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="32"/>
                                                             </state>
+                                                            <connections>
+                                                                <action selector="starButtonPressed:" destination="Jyr-OJ-m7G" eventType="touchUpInside" id="AwV-TF-Kar"/>
+                                                            </connections>
                                                         </button>
                                                         <button opaque="NO" tag="3" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="86Y-Ap-52P">
                                                             <rect key="frame" x="84" y="0.0" width="40" height="40"/>
@@ -530,6 +543,9 @@
                                                             <state key="normal" title="Button" image="star" catalog="system">
                                                                 <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="32"/>
                                                             </state>
+                                                            <connections>
+                                                                <action selector="starButtonPressed:" destination="Jyr-OJ-m7G" eventType="touchUpInside" id="Pso-9f-aPa"/>
+                                                            </connections>
                                                         </button>
                                                         <button opaque="NO" tag="4" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G4q-b9-dFd">
                                                             <rect key="frame" x="126" y="0.0" width="40" height="40"/>
@@ -542,6 +558,9 @@
                                                             <state key="normal" title="Button" image="star" catalog="system">
                                                                 <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="32"/>
                                                             </state>
+                                                            <connections>
+                                                                <action selector="starButtonPressed:" destination="Jyr-OJ-m7G" eventType="touchUpInside" id="j1r-0B-L98"/>
+                                                            </connections>
                                                         </button>
                                                         <button opaque="NO" tag="5" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0bT-IM-ltn">
                                                             <rect key="frame" x="168" y="0.0" width="40" height="40"/>
@@ -554,6 +573,9 @@
                                                             <state key="normal" title="Button" image="star" catalog="system">
                                                                 <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="32"/>
                                                             </state>
+                                                            <connections>
+                                                                <action selector="starButtonPressed:" destination="Jyr-OJ-m7G" eventType="touchUpInside" id="MMp-8r-gGc"/>
+                                                            </connections>
                                                         </button>
                                                     </subviews>
                                                     <constraints>
@@ -712,7 +734,7 @@
                             <outlet property="delegate" destination="Jyr-OJ-m7G" id="CdN-O8-6CG"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" leftItemsSupplementBackButton="YES" id="cpN-eT-Sl0">
+                    <navigationItem key="navigationItem" id="cpN-eT-Sl0">
                         <barButtonItem key="leftBarButtonItem" title="Cancel" id="zOB-rQ-gAq">
                             <connections>
                                 <action selector="cancelButtonPressed:" destination="Jyr-OJ-m7G" id="gYI-Mi-d5i"/>
@@ -736,11 +758,16 @@
                         <outlet property="reviewTextView" destination="fJx-6m-B9P" id="6b0-c7-Ht6"/>
                         <outlet property="reviewTitleField" destination="6nF-Sa-k4o" id="D3H-jU-FyH"/>
                         <outlet property="saveBarButton" destination="h4K-pb-ZDA" id="6El-Dj-OBf"/>
+                        <outletCollection property="starButtonCollection" destination="xRC-6y-06e" collectionClass="NSMutableArray" id="G0S-BX-XSU"/>
+                        <outletCollection property="starButtonCollection" destination="JT3-ZA-k6e" collectionClass="NSMutableArray" id="LDq-OR-bIF"/>
+                        <outletCollection property="starButtonCollection" destination="86Y-Ap-52P" collectionClass="NSMutableArray" id="5un-GD-LBQ"/>
+                        <outletCollection property="starButtonCollection" destination="G4q-b9-dFd" collectionClass="NSMutableArray" id="MoN-DW-gqG"/>
+                        <outletCollection property="starButtonCollection" destination="0bT-IM-ltn" collectionClass="NSMutableArray" id="IEA-cy-pOi"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KrN-aA-V1n" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4835" y="88"/>
+            <point key="canvasLocation" x="5367" y="102"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="EJr-DJ-8ge">
@@ -827,11 +854,11 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1xe-J9-ai9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4194" y="-798"/>
+            <point key="canvasLocation" x="4464" y="-717"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="NeI-Yi-gwh"/>
+        <segue reference="XCQ-ui-AOx"/>
         <segue reference="yd4-z9-x8i"/>
     </inferredMetricsTieBreakers>
     <resources>
