@@ -13,26 +13,29 @@ class Review{
     var text: String
     var rating: Int
     var reviewUserID: String
+    var reviewUserEmail: String
     var date: Date
     var documentID: String
     
     var dictionary: [String: Any]{
         let timeIntervalDate = date.timeIntervalSince1970
-        return ["title" :title, "text": text, "rating": rating, "reviewUserID": reviewUserID, "data": timeIntervalDate]
+        return ["title" :title, "text": text, "rating": rating, "reviewUserID": reviewUserID, "reviewUserEmail": reviewUserEmail, "data": timeIntervalDate]
     }
     
-    init(title: String, text:String, rating: Int, reviewUserID: String, date:Date, documentID: String){
+    init(title: String, text:String, rating: Int, reviewUserID: String, reviewUserEmail: String, date:Date, documentID: String){
         self.title = title
         self.text = text
         self.rating = rating
         self.reviewUserID = reviewUserID
+        self.reviewUserEmail = reviewUserEmail
         self.date = date
         self.documentID = documentID
     }
     
     convenience init(){
         let reviewUserID = Auth.auth().currentUser?.uid ?? ""
-        self.init(title: "", text: "", rating: 0, reviewUserID: reviewUserID, date: Date(), documentID: "")
+        let reviewUserEmail = Auth.auth().currentUser?.email ?? ""
+        self.init(title: "", text: "", rating: 0, reviewUserID: reviewUserID, reviewUserEmail: reviewUserEmail, date: Date(), documentID: "")
     }
     
     convenience init(dictionary: [String: Any]) {
@@ -42,8 +45,9 @@ class Review{
         let timeIntervalDate = dictionary["date"] as! TimeInterval? ?? TimeInterval()
         let date = Date(timeIntervalSince1970: timeIntervalDate)
         let reviewUserID = dictionary["reviewUserID"] as! String? ?? ""
+        let reviewUserEmail = dictionary["reviewUserEmail"] as! String? ?? ""
         let documentID = dictionary["documentID"] as! String? ?? ""
-        self.init(title: title, text: text, rating: rating, reviewUserID: reviewUserID, date: date, documentID: documentID )
+        self.init(title: title, text: text, rating: rating, reviewUserID: reviewUserID, reviewUserEmail: reviewUserEmail, date: date, documentID: documentID )
         }
     
     func saveData(spot: Spot, completion: @escaping (Bool) -> ()) {
@@ -60,7 +64,9 @@ class Review{
                     }
                     self.documentID = ref!.documentID
                     print("💨 Added document: \(self.documentID) to spot: \(spot.documentID)") // It worked!
-                    completion(true)
+                    spot.updateAverageRating{
+                        completion(true)
+                    }
                 }
             } else { // else save to the existing documentID w/.setData
                 let ref = db.collection("spots").document(spot.documentID).collection("reviews").document(self.documentID)
@@ -70,9 +76,27 @@ class Review{
                         return completion(false)
                     }
                     print("💨 Updated document: \(self.documentID) in spot: \(spot.documentID)") // It worked!
+                    spot.updateAverageRating{
+                        completion(true)
+                    }
+                }
+            }
+        }
+    
+    func deleteData(spot: Spot, completion: @escaping(Bool) -> ()) {
+        let db = Firestore.firestore()
+        db.collection("spots").document(spot.documentID).collection("reviews").document(documentID).delete{(error) in
+            if let error = error {
+                print("Error: deleting review documentID \(self.documentID). Error: \(error.localizedDescription)")
+                completion(false)
+            } else {
+                print("Successfully deleted documentID \(self.documentID)")
+                spot.updateAverageRating{
                     completion(true)
                 }
             }
         }
+         
+    }
     
 }

@@ -25,6 +25,7 @@ class SpotListViewController: UIViewController {
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        navigationController?.setToolbarHidden(false, animated: true)
         getLocation()
         spots.loadData {
             self.sortBasedOnSegmentPressed()
@@ -55,7 +56,7 @@ class SpotListViewController: UIViewController {
         case 1:
             spots.spotArray.sort(by: {$0.location.distance(from: currentLocation) < $1.location.distance(from: currentLocation)})
         case 2:
-            print("Todo")
+            spots.spotArray.sort(by: {$0.averageRating > $1.averageRating})
         default:
             print("This should not have occurred.")
         }
