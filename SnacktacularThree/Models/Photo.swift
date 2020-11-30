@@ -74,7 +74,7 @@ class Photo {
                 print("Upload to Firebase Storage was successful!")
                 storageRef.downloadURL {(url, error) in
                     guard error == nil else {
-                        print("Error: Couldn't create a download url \(error.localizedDescription)")
+                        print("Error: Couldn't create a download url \(error?.localizedDescription ?? "")")
                         return completion(false)
                     }
                     guard let url = url else {
@@ -118,6 +118,35 @@ class Photo {
             } else {
                 self.image = UIImage(data: data!) ?? UIImage()
                 return completion(true)
+            }
+        }
+    }
+    
+    func deleteData(spot: Spot, completion: @escaping(Bool) -> ()) {
+        let db = Firestore.firestore()
+        db.collection("spots").document(spot.documentID).collection("photos").document(documentID).delete{(error) in
+            if let error = error {
+                print("Error: deleting photo documentID \(self.documentID). Error: \(error.localizedDescription)")
+                completion(false)
+            } else {
+                self.deleteImage(spot: spot)
+                print("Successfully deleted documentID \(self.documentID)")
+                    completion(true)
+            }
+        }
+    }
+    private func deleteImage(spot:Spot){
+        guard spot.documentID != "" else{
+            print("Error: did not pass a valid spot into deleteImage")
+            return
+        }
+        let storage = Storage.storage()
+        let storageRef = storage.reference().child(spot.documentID).child(documentID)
+        storageRef.delete {error in
+            if let error = error{
+                print("Error: Could not delete photo \(error.localizedDescription)")
+            } else {
+                print("Photo successfully deleted!")
             }
         }
     }
