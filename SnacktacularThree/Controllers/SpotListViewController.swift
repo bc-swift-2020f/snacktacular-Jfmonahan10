@@ -66,6 +66,10 @@ class SpotListViewController: UIViewController {
     @IBAction func sortSegementPressed(_ sender: UISegmentedControl) {
         sortBasedOnSegmentPressed()
     }
+    
+    @IBAction func usersButtonPressed(_ sender: UIBarButtonItem) {
+    }
+    
 }
 
 extension SpotListViewController: UITableViewDelegate, UITableViewDataSource {
@@ -85,6 +89,8 @@ extension SpotListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 60
     }
+    
+    
 }
 
 extension SpotListViewController: CLLocationManagerDelegate {

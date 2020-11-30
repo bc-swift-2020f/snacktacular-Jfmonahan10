@@ -74,7 +74,7 @@ class Photo {
                 print("Upload to Firebase Storage was successful!")
                 storageRef.downloadURL {(url, error) in
                     guard error == nil else {
-                        print("Error: Couldn't create a download url \(error?.localizedDescription)")
+                        print("Error: Couldn't create a download url \(error.localizedDescription)")
                         return completion(false)
                     }
                     guard let url = url else {
